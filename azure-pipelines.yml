@@ -42,8 +42,3 @@ steps:
   inputs:
     Contents: '**\*.sppkg'
     TargetFolder: '$(build.artifactstagingdirectory)/drop'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)/drop'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
