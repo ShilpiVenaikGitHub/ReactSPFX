@@ -7,7 +7,7 @@ trigger:
 - shilpiDev
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
 - task: NodeTool@0
@@ -42,3 +42,8 @@ steps:
   inputs:
     Contents: '**\*.sppkg'
     TargetFolder: '$(build.artifactstagingdirectory)/drop'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)/drop'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
